@@ -1,7 +1,7 @@
-/*Лабораторная работа 2 по дисциплине МРЗвИС
- * Выполнена студентами группы 821704
- * БГУИР Гавриленко Я.В. Ильюкевич В.А.
- * Вариант 9
+/*Р›Р°Р±РѕСЂР°С‚РѕСЂРЅР°СЏ СЂР°Р±РѕС‚Р° 2 РїРѕ РґРёСЃС†РёРїР»РёРЅРµ РњР Р—РІРРЎ
+ * Р’С‹РїРѕР»РЅРµРЅР° СЃС‚СѓРґРµРЅС‚Р°РјРё РіСЂСѓРїРїС‹ 821704
+ * Р‘Р“РЈРР  Р“Р°РІСЂРёР»РµРЅРєРѕ РЇ.Р’. РР»СЊСЋРєРµРІРёС‡ Р’.Рђ.
+ * Р’Р°СЂРёР°РЅС‚ 9
  */
 
 #include <iostream>
@@ -14,12 +14,12 @@
 using namespace std;
 
 int p, m, q, n,r;
-//данный тип значения n необходим для предотвращения утечки данных
+//РґР°РЅРЅС‹Р№ С‚РёРї Р·РЅР°С‡РµРЅРёСЏ n РЅРµРѕР±С…РѕРґРёРј РґР»СЏ РїСЂРµРґРѕС‚РІСЂР°С‰РµРЅРёСЏ СѓС‚РµС‡РєРё РґР°РЅРЅС‹С…
 double n_double;
 
 vector <vector <double> > Am, Bm, Em, Gm, Cm;
 vector <vector<vector <double> > > Fijk, Dijk;
-//счетчики операций
+//СЃС‡РµС‚С‡РёРєРё РѕРїРµСЂР°С†РёР№
 int counter_sum, 
 	counter_diffference, 
 	counter_multiplicity, 
@@ -30,7 +30,7 @@ int counter_sum,
 	counter_composition_Fijk,
 	counter_composition_Dijk, 
 	counter_calculate_Dijk;
-//значений времени выполнения операций: сумма, разность, умножение, сравнение
+//Р·РЅР°С‡РµРЅРёР№ РІСЂРµРјРµРЅРё РІС‹РїРѕР»РЅРµРЅРёСЏ РѕРїРµСЂР°С†РёР№: СЃСѓРјРјР°, СЂР°Р·РЅРѕСЃС‚СЊ, СѓРјРЅРѕР¶РµРЅРёРµ, СЃСЂР°РІРЅРµРЅРёРµ
 int time_of_sum, 
 	time_of_difference, 
 	time_of_multiplicity, 
@@ -38,24 +38,24 @@ int time_of_sum,
 	
 double Tn, Lsum, T1, Ky, e,Lavg;
 
-//зануляет все значения
+//Р·Р°РЅСѓР»СЏРµС‚ РІСЃРµ Р·РЅР°С‡РµРЅРёСЏ
 void grounding();
-//генерирует матрицу размерностью rows x columns
+//РіРµРЅРµСЂРёСЂСѓРµС‚ РјР°С‚СЂРёС†Сѓ СЂР°Р·РјРµСЂРЅРѕСЃС‚СЊСЋ rows x columns
 vector <vector<double> > createMatrix(int rows, int columns);
 void printMatrix(int rows, int columns, vector <vector<double> > matrix, string s);
-//операции индивидуального задания
+//РѕРїРµСЂР°С†РёРё РёРЅРґРёРІРёРґСѓР°Р»СЊРЅРѕРіРѕ Р·Р°РґР°РЅРёСЏ
 double composition_Fijk(int i, int j); //1
 double composition_Dijk(int i, int j); //2 
 double third_operation(int i, int j); //3
 double implicationA_B(double a, double b); //4
 double implicationB_A(double a, double b); //5
-//шестая операция объединена с функцией вычисления матрицы D
+//С€РµСЃС‚Р°СЏ РѕРїРµСЂР°С†РёСЏ РѕР±СЉРµРґРёРЅРµРЅР° СЃ С„СѓРЅРєС†РёРµР№ РІС‹С‡РёСЃР»РµРЅРёСЏ РјР°С‚СЂРёС†С‹ D
 
-//функции вычисления матриц
+//С„СѓРЅРєС†РёРё РІС‹С‡РёСЃР»РµРЅРёСЏ РјР°С‚СЂРёС†
 vector <vector<vector <double> > > calculate_Fijk();
 vector <vector<vector <double> > > calculate_Dijk();
 vector <vector<double> > calculate_Cm();
-//вспомагательная функция генерации матриц
+//РІСЃРїРѕРјР°РіР°С‚РµР»СЊРЅР°СЏ С„СѓРЅРєС†РёСЏ РіРµРЅРµСЂР°С†РёРё РјР°С‚СЂРёС†
 double random(double min, double max);
 
 int main()
